@@ -9,3 +9,11 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello Ajarn Sun!'
 
+@app.route('/lala')
+def lala():
+    return 'Lala'
+
+@app.route(/lala/lovesong)
+def lalalovesong():
+    return 'Lalalovesong'
+
