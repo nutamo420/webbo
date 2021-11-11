@@ -13,7 +13,7 @@ def hello_world():
 def lala():
     return 'Lala'
 
-@app.route(/lala/lovesong)
+@app.route('/lala/lovesong')
 def lalalovesong():
     return 'Lalalovesong'
 
