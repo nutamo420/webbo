@@ -8,14 +8,19 @@ def homepage():
     return render_template('index.html')
 
 @app.route('/stock')
-def currency_form():
+def entername():
     return render_template('form.html')
 
 @app.route('/result', methods = ['GET'])
-def currency_result():
-    result = requests.get("http://data.fixer.io/api/latest?access_key=88e986137779229d0ead7334b6a91252")
-    jsondata = result.json()
-    eur_thb = jsondata['rates']['THB']
-    eur = request.args.get('amount')
-    thb = float(eur)*float(eur_thb)
-    return render_template('result.html',amount_eur=eur,amount_thb=thb)
+def price_result():
+    # result = requests.get("http://data.fixer.io/api/latest?access_key=WPA26IESV0A5ACK1")
+    # jsondata = result.json()
+    # eur_thb = jsondata['rates']['THB']
+    # eur = request.args.get('amount')
+    # thb = float(eur)*float(eur_thb)
+    # return render_template('result.html',amount_eur=eur,amount_thb=thb)
+    url = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=WPA26IESV0A5ACK1'
+    r = requests.get(url)
+    data = r.json()
+
+    print(data)
