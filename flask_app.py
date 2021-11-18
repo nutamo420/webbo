@@ -11,7 +11,7 @@ def homepage():
 def entername():
     return render_template('form.html')
 
-@app.route('/result', methods = ['GET'])
+@app.route('/result')
 def price_result():
     # result = requests.get("http://data.fixer.io/api/latest?access_key=WPA26IESV0A5ACK1")
     # jsondata = result.json()
@@ -23,4 +23,4 @@ def price_result():
     r = requests.get(url)
     data = r.json()
 
-    print(data)
+    return str(data)
