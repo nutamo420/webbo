@@ -7,7 +7,7 @@ app = Flask(__name__)
 def homepage():
     return render_template('index.html')
 
-@app.route('/currency')
+@app.route('/stock')
 def currency_form():
     return render_template('form.html')
 
